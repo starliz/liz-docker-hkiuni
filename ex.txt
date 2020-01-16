@@ -1,4 +1,4 @@
-Ex 1.4 - 1.5 performed on Windows 10, and next on Fedora.
+Ex 1.4 - 1.6 performed on Windows 10, and next on Fedora.
 
 1.4
 docker pull devopsdockeruh/exec_bash_exercise
@@ -20,7 +20,9 @@ docker exec -it ubu-it bash
 	apt install curl
 	sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
 --------------------
-1.6 on Fedora
+1.6 
 
 important note:
-You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions for sensitive files and directories.
+You are building a Docker image from Windows against a non-Windows Docker host. 
+All files and directories added to build context will have '-rwxr-xr-x' permissions. 
+It is recommended to double check and reset permissions for sensitive files and directories.
