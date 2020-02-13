@@ -1,0 +1,55 @@
+# 1.11
+
+# First start frontend container from ex 1.10: docker run -d --rm -p 5000:5000 run110
+
+# Command to build and tag/name: 
+# docker build -t backend111 .
+# Command to run container (in detached mode and remove after use): 
+# Run the container with -p <host-port>:<container-port>  so Docker will map containers ports to host (your machine) ports. 
+# docker run -d --rm -p 8000:8000 -v $(pwd)/logs.txt:/usr/src/app/logs.txt backend111
+# --> open http://localhost:8000/
+# --> Port configured correctly, generated message in logs.txt
+
+FROM ubuntu:16.04 
+#FROM node:12-alpine --- another option
+
+RUN apt-get update && apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+RUN apt-get install -y nodejs 
+
+# Exposing port - tell Docker that the container listens to a certain port
+EXPOSE 8000
+
+WORKDIR /usr/src/app
+#COPY ./backend-example-docker/package*.json ./
+COPY ./backend-example-docker/ ./
+RUN npm install
+RUN npm audit fix
+RUN npm install -g serve
+
+# --- by adding the instructions to the bottom we preserve our cached layers --- 
+
+
+# Create a volume for the logs.txt so that when the application is shut down the logs are not destroyed. 
+# And when restarted it continues to write into the same logs.txt.
+# [liz@localhost ex1.11]$ docker exec -it magical_liskov bash
+# root@933327405e26:/usr/src/app# ls
+# README.md  config.js  index.js  logs.txt  node_modules  package-lock.json  package.json  server
+# root@933327405e26:/usr/src/app# cat logs.txt 
+# root@933327405e26:/usr/src/app# cat logs.txt 
+# 
+# 1/23/2020, 1:24:07 PM: Connection received in root
+
+# The CMD represents an argument list for the entrypoint. By default entrypoint is set as /bin/sh and this is passed if no entrypoint is set. 
+# There are two ways to set them: exec form and shell form. 
+# We’ve been using the exec form where the command itself is executed. 
+ENTRYPOINT ["npm"] 
+CMD ["start"]
+
+# generate a message in logs.txt in the root. 
+
+
+
+
+
+

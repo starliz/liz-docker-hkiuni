@@ -1,4 +1,20 @@
 Ex 1.4 - 1.6 performed on Windows 10, and next on Fedora.
+----------------------------------------
+Start and run
+----------------------------------------
+$ sudo systemctl start docker
+$ sudo usermod -aG docker liz
+$ cat /etc/group | grep docker
+---> docker:x:972:liz
+$ docker run hello-world
+
+----------------------------------------
+Cleaning up
+----------------------------------------
+docker container prune
+docker container ls -a
+docker image prune -a
+
 
 1.4
 docker pull devopsdockeruh/exec_bash_exercise
@@ -26,3 +42,10 @@ important note:
 You are building a Docker image from Windows against a non-Windows Docker host. 
 All files and directories added to build context will have '-rwxr-xr-x' permissions. 
 It is recommended to double check and reset permissions for sensitive files and directories.
+
+----------------------------------------
+Publishing to hub.docker.com
+----------------------------------------
+docker tag liz/lamp:latest starliz/lizlamp:latest
+docker login
+docker push starliz/lizlamp:latest

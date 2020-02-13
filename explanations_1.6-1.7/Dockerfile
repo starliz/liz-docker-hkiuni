@@ -1,3 +1,4 @@
+# 1.6 and 1.7
 # Command to build and tag/name: docker build -t myfirst . 
 
 # Specify the base image
