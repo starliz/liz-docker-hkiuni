@@ -4,7 +4,6 @@
 # The base image:
 FROM devopsdockeruh/overwrite_cmd_exercise
 
-
 # This will be executed when using "docker run"
 CMD ["/bin/bash"]
 CMD [" -c"]
