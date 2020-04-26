@@ -3,6 +3,10 @@
 # docker build -t youtube-dl .
 # Command to run container (interactive and remove after use): docker run -it myfirst  // --rm option may be used to clean the garbage after
 # docker run youtube-dl
+
+# When you use a bind mount, a file or directory on the host machine is mounted into a container. Bind mounts rely on the host machine’s filesystem having a specific directory structure available.
+# When you use a volume, a new directory is created within Docker’s storage directory on the host machine, and Docker manages that directory’s contents.
+#  -v creates a directory if the file does not exist.
 # docker run -v $(pwd):/mydir youtube-dl https://imgur.com/JY5tHqr
 # it downloads the file with success, but: find: ‘*JY5tHqr.mp4’: No such file or directory
 
