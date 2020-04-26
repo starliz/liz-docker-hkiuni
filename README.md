@@ -25,10 +25,29 @@ docker exec -it ubu-it bash
 	apt install curl
 	sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
 --------------------
+
 ## Exercise 1.6 
 Command to build and tag/name: docker build -t docker-clock . 
 Command to run container and clock: docker run docker-clock
 And to stop: docker stop bold_ardinghelli (container name)
+
+## Exercise 1.7
+Command to build and tag/name: docker build -t curler .
+Command to run container (interactive and remove after use): docker run -it --rm curler
+And the optput will be:
+    [liz@localhost ex1.07]$ docker run -it --rm curler
+    Input website:
+    helsinki.fi
+    Searching..
+    <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+    <html><head>
+    <title>301 Moved Permanently</title>
+    </head><body>
+    <h1>Moved Permanently</h1>
+    <p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+    </body></html>
+    [liz@localhost ex1.07]$ 
+
 
 ----------------------------------------
 Publishing to hub.docker.com

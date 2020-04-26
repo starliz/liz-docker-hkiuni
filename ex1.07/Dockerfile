@@ -1,7 +1,7 @@
 # Command to build and tag/name: docker build -t curler .
 # Command to run container (interactive and remove after use): docker run -it --rm curler
 # And the optput will be:
-# [liz@localhost ex17]$ docker run -it --rm curler
+# [liz@localhost ex1.07]$ docker run -it --rm curler
 # Input website:
 # helsinki.fi
 # Searching..
@@ -12,7 +12,7 @@
 # <h1>Moved Permanently</h1>
 # <p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
 # </body></html>
-# [liz@localhost ex17]$ 
+# [liz@localhost ex1.07]$ 
 
 
 # The base image:
