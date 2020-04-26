@@ -1,3 +1,4 @@
+# 1.07
 # Command to build and tag/name: docker build -t curler .
 # Command to run container (interactive and remove after use): docker run -it --rm curler
 # And the optput will be:
