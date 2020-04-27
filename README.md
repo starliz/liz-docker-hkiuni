@@ -74,8 +74,23 @@ total 8
 -rw-rw-r--. 1 liz liz 1433 Jan 17 17:10 Dockerfile
 -rw-rw-r--. 1 liz liz  591 Apr 26 16:52 logs.txt
 [liz@localhost ex1.08]$ 
+```
+
+## Exercise 1.9 publishing port
+To check if port is free
+`$ sudo netstat -lntup | grep ":8080"`
 
 ```
+$ docker run -d -p 8080:80 devopsdockeruh/ports_exercise
+$ docker container ls
+CONTAINER ID     IMAGE                                  COMMAND                  CREATED             STATUS                    PORTS                     NAMES
+990b8158248c     devopsdockeruh/ports_exercise          "npm start"              18 seconds ago      Up 15 seconds             0.0.0.0:32768->8080/tcp   silly_morse
+```
+
+access in browser: localhost:8080
+
+`"Ports configured correctly!!"`
+
 
 
 
