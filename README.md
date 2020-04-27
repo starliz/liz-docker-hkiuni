@@ -91,6 +91,51 @@ access in browser: localhost:8080
 
 `"Ports configured correctly!!"`
 
+## Exercise 1.10 Run the project
+
+### Clone repo on host machine to test the app:
+```
+[liz@localhost ]$ cd home/liz/edu/IT_edu/docker/devopswithdocker/liz-docker-hkiuni/ex1.10/
+[liz@localhost ex1.10]$ git clone git@github.com:docker-hy/frontend-example-docker.git
+[liz@localhost ex1.10]$ cd frontend-example-docker/
+```
+Installing Nodejs
+```
+sudo dnf install -y gcc-c++ make
+curl -sL https://rpm.nodesource.com/setup_12.x | sudo -E bash -
+sudo dnf install nodejs
+```
+Check your installed versions
+```
+node -v && npm -v
+v12.15.0
+6.13.4
+```
+Install all packages with 
+```
+npm install
+npm audit fix
+npm run
+```
+### Build & Run docker container
+```
+[liz@localhost frontend-example-docker]$ cd ..
+[liz@localhost ex1.10]$ docker build -t run110 .
+...
+Successfully built 7241df2137e0
+Successfully tagged run110:latest
+```
+Navigating to http://localhost:5000 and after a little delay seeing:
+```
+Part 1
+Exercise 1.10: Congratulations! You configured your ports correctly!
+```
+
+
+$ docker build -f Dockerfile.debug .
+This will use a file called Dockerfile.debug for the build instructions instead of Dockerfile.
+
+
 
 
 
