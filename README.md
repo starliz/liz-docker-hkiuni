@@ -130,10 +130,17 @@ Navigating to http://localhost:5000 and after a little delay seeing:
 Part 1
 Exercise 1.10: Congratulations! You configured your ports correctly!
 ```
+## Exercise 1.11
+Cloning backend repo, running frontend, building and running backend:
+```
+[liz@localhost ex1.11]$ git clone git@github.com:docker-hy/backend-example-docker.git
+[liz@localhost ex1.11]$ docker run -d --rm -p 5000:5000 run110
+[liz@localhost ex1.11]$ docker build -t backend111 .
+[liz@localhost ex1.11]$ docker run -d --rm -p 8000:8000 -v $(pwd)/logs.txt:/usr/src/app/logs.txt backend111
+```
+ --> open http://localhost:8000/
 
-
-$ docker build -f Dockerfile.debug .
-This will use a file called Dockerfile.debug for the build instructions instead of Dockerfile.
+ --> Port configured correctly, generated message in logs.txt
 
 
 
