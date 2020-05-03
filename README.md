@@ -173,6 +173,32 @@ Build and run the Docker image:
 [liz@localhost ex1.13]$ docker run -d -p 8080:8080 --rm --name my-running-app my-java-app
 ```
 
+## Exercise 1.14
+
+Clone project, build the app:
+```
+[liz@localhost ex1.14]$ git clone git@github.com:docker-hy/rails-example-project.git
+[liz@localhost ex1.14]$ cd rails-example-project
+[liz@localhost rails-example-project]$ gem install bundler
+[liz@localhost rails-example-project]$ bundle install
+```
+
+Build the Docker image,  run container:
+```
+[liz@localhost ex1.14]$ docker build -t my-rails-app .
+[liz@localhost ex1.14]$ docker run -it -p 3000:3000 --rm --name my-running-app my-rails-app
+=> Booting Puma
+=> Rails 5.2.2.1 application starting in development 
+=> Run `rails server -h` for more startup options
+Puma starting in single mode...
+* Version 3.12.0 (ruby 2.6.0-p0), codename: Llamas in Pajamas
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://0.0.0.0:3000
+Use Ctrl-C to stop
+
+```
+
 
 
 ----------------------------------------
