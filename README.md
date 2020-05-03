@@ -224,3 +224,33 @@ docker login
 docker push starliz/lizlamp:latest
 ```
 
+## Exercise 1.16 https://liz-heroku.herokuapp.com/
+Start from creating accunt on Heroku, create new app: https://dashboard.heroku.com/apps
+
+Installing Heroku CLI (https://snapcraft.io/install/heroku/fedora):
+```
+[liz@localhost ex1.16]$ sudo dnf install snapd
+[liz@localhost ex1.16]$ sudo ln -s /var/lib/snapd/snap /snap
+[liz@localhost ex1.16]$ sudo snap install heroku --classic
+```
+Tag the pulled image: 
+```
+[liz@localhost ex1.16]$ docker tag devopsdockeruh/heroku-example:latest registry.heroku.com/liz-heroku/web:latest
+[liz@localhost ex1.16]$ docker images
+REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
+...
+devopsdockeruh/heroku-example           latest              5221e4b03bc7        13 months ago       1.17GB
+registry.heroku.com/liz-heroku/web      latest              5221e4b03bc7        13 months ago       1.17GB
+
+```
+releasing:
+```
+[liz@localhost ex1.16]$ heroku login
+[liz@localhost ex1.16]$ docker push registry.heroku.com/liz-heroku/web:latest
+[liz@localhost ex1.16]$ heroku container:login
+[liz@localhost ex1.16]$ heroku container:release web -a liz-heroku
+Releasing images web to liz-heroku... done
+```
+Resulting App: https://liz-heroku.herokuapp.com/
+
+---
