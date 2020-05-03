@@ -142,8 +142,20 @@ Cloning backend repo, running frontend, building and running backend:
 
  --> Port configured correctly, generated message in logs.txt
 
+## Exercise 1.12
+Command to build, tag and run backend: 
+```
+[liz@localhost ex1.12]$ docker build -f Dockerfile.backend -t backend .
+[liz@localhost ex1.12]$ docker run -d --rm -p 8000:8000 -v $(pwd)/logs.txt:/usr/src/app/logs.txt backend
+```
+ --> open http://localhost:8000/
 
-
+Command to build, tag and run frontend: 
+```
+[liz@localhost ex1.12]$ docker build -f Dockerfile.frontend -t frontend .
+[liz@localhost ex1.12]$ docker run -d --rm -p 5000:5000 frontend
+```
+--> open http://localhost:5000/
 
 
 ----------------------------------------
