@@ -199,11 +199,28 @@ Use Ctrl-C to stop
 
 ```
 
+## Exercise 1.15
+The link to the project in docker hub: https://hub.docker.com/repository/docker/starliz/lizlamp
 
+This Docker image with LAMP application is an outcome of exercises done in two different courses.
 
-----------------------------------------
-Publishing to hub.docker.com
-----------------------------------------
+Instructions: https://starliz.github.io/2017/02/17/h5-lamp-in-docker.html
+
+Original files available at https://github.com/starliz/liz-docker-lamp
+
+### To build and run do:
+```
+git clone git@github.com:starliz/liz-docker-lamp.git 
+cd ./liz-docker-lamp/
+docker build -f Dockerfile_lamp -t liz/lamp .
+docker run -d -p 8080:80 liz/lamp
+
+```
+
+### Publishing to hub.docker.com
+```
 docker tag liz/lamp:latest starliz/lizlamp:latest
 docker login
 docker push starliz/lizlamp:latest
+```
+
