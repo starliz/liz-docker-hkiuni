@@ -4,9 +4,6 @@
 # docker run -d -p 8080:8080 --rm --name my-running-app my-java-app
 # OR
 # docker run -it -p 8080:8080 --rm --name my-running-app my-java-app
-# Unrecognized option: -jar ./target/docker-example-1.1.3.jar
-# Error: Could not create the Java Virtual Machine.
-# Error: A fatal exception has occurred. Program will exit.
 
 
 # https://hub.docker.com/_/openjdk
@@ -39,3 +36,6 @@ RUN ls -al ./target/
 ENTRYPOINT ["java", "-jar"] 
 # command represents an argument list for the entrypoint
 CMD ["./target/docker-example-1.1.3.jar"]
+# Unrecognized option: -jar ./target/docker-example-1.1.3.jar
+# Error: Could not create the Java Virtual Machine.
+# Error: A fatal exception has occurred. Program will exit.

@@ -157,6 +157,23 @@ Command to build, tag and run frontend:
 ```
 --> open http://localhost:5000/
 
+## Exercise 1.13
+
+Clone project, build the app:
+```
+[liz@localhost ex1.13]$ git clone git@github.com:docker-hy/spring-example-project.git
+[liz@localhost ex1.13]$ cd spring-example-project/
+[liz@localhost spring-example-project]$ ./mvnw package
+[liz@localhost spring-example-project]$ cd ..
+
+```
+Build and run the Docker image:
+```
+[liz@localhost ex1.13]$ docker build -t my-java-app .
+[liz@localhost ex1.13]$ docker run -d -p 8080:8080 --rm --name my-running-app my-java-app
+```
+
+
 
 ----------------------------------------
 Publishing to hub.docker.com
